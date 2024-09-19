@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: starbucks-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: starbucks
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: starbucks
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: starbucks

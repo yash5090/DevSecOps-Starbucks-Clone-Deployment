@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: starbucks-deployment
+spec:
+  replicas: 6  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: starbucks
+  template:
+    metadata:
+      labels:
+        app: starbucks
+    spec:
+      containers:
+      - name: starbucks
+        image: yash5090/starbucks:latest
+        ports:
+        - containerPort: 3000

@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: starbucks-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: starbucks-job
+        image: yash5090/starbucks:latest
+        ports:
+        - containerPort: 3000
+      restartPolicy: OnFailure

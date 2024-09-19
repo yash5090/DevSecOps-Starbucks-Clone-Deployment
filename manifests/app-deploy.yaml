@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: starbucks-deployment
+spec:
+  replicas: 6 # You can adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: starbucks
+  template:
+    metadata:
+      labels:
+        app: starbucks
+    spec:
+      containers:
+        - name: starbucks
+          image: yash5090/starbucks:latest # Replace with the actual image tag
+          ports:
+            - containerPort: 3000 # Replace with the port your Tetris game listens on
