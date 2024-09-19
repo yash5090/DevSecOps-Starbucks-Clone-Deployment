@@ -29,7 +29,7 @@ pipeline {
         
         stage('Checkout from Git') {                        
             steps {                                       
-                git branch: 'main', url: 'https://github.com/yash509/DevSecOps-Starbucks-Clone-Deployment.git'
+                git branch: 'main', url: 'https://github.com/devsecops-predator/DevSecOps-Starbucks-Clone-Deployment.git'
             }
         }
         
